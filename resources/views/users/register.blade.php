@@ -28,7 +28,7 @@
 
     <div class="btn-group-login-2">
         <button type="submit" class="btn-success">Cadastrar</button>
-        <a href="{{ route('login') }}" class="nav-link">Sair</a>
+        <a href="{{ route('login') }}" class="btn-primary">Voltar</a>
     </div>
 </form>
 

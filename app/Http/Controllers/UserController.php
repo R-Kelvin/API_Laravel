@@ -46,7 +46,7 @@ class UserController extends Controller
 //cria usuário fora do sistema
 
     public function register(){
-        return view ('layouts.register');
+        return view ('users.register');
     }
 
     public function storeRegister(UserRequest $request){

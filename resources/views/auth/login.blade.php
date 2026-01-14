@@ -25,7 +25,7 @@
     </div>
 
     <div class="mt-4 text-center">
-        <a href="{{ route('layouts.register') }}" class="link-login">Criar nova conta</a>
+        <a href="{{ route('users.register') }}" class="link-login">Criar nova conta</a>
     </div>
 
 </form>
