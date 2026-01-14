@@ -14,6 +14,11 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 //logout
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+//registrar novo usuário
+
+Route::get('/register-user', [UserController::class, 'register'])->name('layouts.register');
+Route::post('/storeRegister-user', [UserController::class, 'storeRegister'])->name('user.storeRegister');
+
 //processa dados de login
 Route::post('/login', [AuthController::class, 'LoginProcess'])->name('login.process');
 

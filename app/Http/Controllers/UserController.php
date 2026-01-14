@@ -8,10 +8,11 @@ use App\Models\User;
 use Exception;
 use Illuminate\View\View;
 
+
 class UserController extends Controller
 {
     public function index(){
-        $users = User::orderByDesc('id') -> paginate(5);
+        $users = User::orderByDesc('id') -> paginate(7);
         return view('users.index', ['users' => $users]);
     }
 
@@ -19,6 +20,7 @@ class UserController extends Controller
         return view ('users.show', ['user' => $user]);
     }
 
+//cria novo usuário dentro do sistema
 
 
     public function create() {
@@ -41,6 +43,29 @@ class UserController extends Controller
     }
     }
 
+//cria usuário fora do sistema
+
+    public function register(){
+        return view ('layouts.register');
+    }
+
+    public function storeRegister(UserRequest $request){
+
+        try{
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        return redirect() -> route ('login', ['user' => $user->id]) -> with ('success', 'Usuário casdastrado!');
+    }catch(Exception $e){
+        return back() -> withInput() -> with ('error', 'Usuário não casdastrado!');
+    }
+    }
+
+//edita usuário
 
     public function edit(User $user){
         return view ('users.edit', ['user' => $user]);
@@ -58,6 +83,8 @@ class UserController extends Controller
            return back() -> withInput() -> with ('error', 'Usuário não editado!');
         }
     }
+
+//deleta usuário
 
     public function destroy(User $user){
         try{

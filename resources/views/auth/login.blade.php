@@ -21,11 +21,11 @@
     <!--alterar senha-->
     <div class="btn-group-login">
         <a href="#" class="link-login">Esqueçeu a senha?</a>
-        <button type="submit" class="btn-primary"> Acessar</button>
+        <button type="submit" class="btn-primary">Acessar</button>
     </div>
 
     <div class="mt-4 text-center">
-        <a href="#" class="link-login">Criar nova conta</a>
+        <a href="{{ route('layouts.register') }}" class="link-login">Criar nova conta</a>
     </div>
 
 </form>

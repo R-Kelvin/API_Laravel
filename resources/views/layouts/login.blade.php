@@ -13,8 +13,6 @@
             <a href="{{ route('login') }}">
                 <img src="{{ asset('images/Laravel.svg.png')}}" alt="logo" class="logo-login">
             </a>
-
-
         </div>
         @yield('content')
     </div>
