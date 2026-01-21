@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,18 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //registrar novo usuário
-
 Route::get('/register-user', [UserController::class, 'register'])->name('users.register');
 Route::post('/storeRegister-user', [UserController::class, 'storeRegister'])->name('user.storeRegister');
+
+//editar senha
+// Solicitar link para resetar senha
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+// Formulário para redefinir a senha com o token
+Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'showRequestForm'])->name('password.reset');
+Route::post('/reset-password', [ForgotPasswordController::class, 'reset'])->name('password.update');
+
 
 //processa dados de login
 Route::post('/login', [AuthController::class, 'LoginProcess'])->name('login.process');

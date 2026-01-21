@@ -7,7 +7,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Exception;
 use Illuminate\View\View;
-
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
@@ -83,6 +83,8 @@ class UserController extends Controller
            return back() -> withInput() -> with ('error', 'Usuário não editado!');
         }
     }
+
+
 
 //deleta usuário
 

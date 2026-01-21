@@ -26,9 +26,9 @@
         <input type="password" name="password" id="password" class="form-input-login" placeholder="Digite sua senha" value="{{ old('password')}}">
     </div>
 
-    <div class="btn-group-login-2">
-        <button type="submit" class="btn-success">Cadastrar</button>
+    <div class="btn-group-login">
         <a href="{{ route('login') }}" class="btn-primary">Voltar</a>
+        <button type="submit" class="btn-success">Cadastrar</button>
     </div>
 </form>
 

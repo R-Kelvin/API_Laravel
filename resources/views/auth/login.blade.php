@@ -20,7 +20,7 @@
 
     <!--alterar senha-->
     <div class="btn-group-login">
-        <a href="#" class="link-login">Esqueçeu a senha?</a>
+        <a href="{{ route('password.request') }}" class="link-login">Esqueçeu a senha?</a>
         <button type="submit" class="btn-primary">Acessar</button>
     </div>
 
