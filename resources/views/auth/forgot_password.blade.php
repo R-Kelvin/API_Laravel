@@ -9,7 +9,7 @@
         @csrf
         @method('POST')
 
-        <!-- Campo e-mail -->
+
         <div class="form-group-login">
             <label for="email" class="form-label-login">E-mail</label>
             <input type="email" name="email" id="email" placeholder="Digite o e-mail cadastrado"
